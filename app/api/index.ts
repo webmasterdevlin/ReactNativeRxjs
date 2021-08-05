@@ -1,6 +1,7 @@
 import {Observable, Subject} from 'rxjs';
-import {httpGet, httpDelete, httpPost, httpPut} from './observable-converter';
 import {take} from 'rxjs/operators';
+
+import {httpGet, httpDelete, httpPost, httpPut} from './observable-converter';
 
 export const useObservable = () => {
   const subj = new Subject<boolean>();

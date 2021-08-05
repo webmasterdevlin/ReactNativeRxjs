@@ -1,7 +1,8 @@
-import initializeAxios from './interceptors';
-import {axiosRequestConfiguration} from './api-config';
 import {map} from 'rxjs/operators';
 import {defer, Observable} from 'rxjs';
+
+import initializeAxios from './interceptors';
+import {axiosRequestConfiguration} from './api-config';
 
 const axiosInstance = initializeAxios(axiosRequestConfiguration);
 
