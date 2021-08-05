@@ -1,7 +1,8 @@
-import { AxiosRequestConfig } from 'axios';
+import {AxiosRequestConfig} from 'axios';
 
 export const axiosRequestConfiguration: AxiosRequestConfig = {
-  baseURL: 'http://localhost:5000/',
+  // baseURL: 'http://localhost:5000/',
+  baseURL: 'http://10.0.2.2:5000/',
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
@@ -9,7 +10,7 @@ export const axiosRequestConfiguration: AxiosRequestConfig = {
 };
 
 export const EndPoints = {
-  heroes: "heroes",
-  antiHeroes: "anti-heroes",
-  villains: "villains",
+  heroes: 'heroes',
+  antiHeroes: 'anti-heroes',
+  villains: 'villains',
 };

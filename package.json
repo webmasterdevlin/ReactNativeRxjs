@@ -8,7 +8,8 @@
     "ios": "npx pod-install && npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
     "android": "npx react-native run-android --variant=Debug",
     "backend": "json-server --watch db.json --port 5000 --delay=1000",
-    "start:fullstack": "concurrently \"npm run backend\" \"npm run ios\""
+    "fullstack:ios": "concurrently \"npm run backend\" \"npm run ios\"",
+    "fullstack:android": "concurrently \"npm run backend\" \"npm run android\""
   },
   "dependencies": {
     "axios": "^0.21.1",
