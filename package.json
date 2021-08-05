@@ -6,10 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "ios": "npx pod-install && npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
-    "android": "npx react-native run-android --variant=Debug",
-    "backend": "json-server --watch db.json --port 5000 --delay=1000",
-    "fullstack:ios": "concurrently \"npm run backend\" \"npm run ios\"",
-    "fullstack:android": "concurrently \"npm run backend\" \"npm run android\""
+    "android": "npx react-native run-android --variant=Debug"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -17,7 +14,8 @@
     "react-native": "0.64.2",
     "react-native-elements": "^3.4.2",
     "react-native-safe-area-context": "^3.2.0",
-    "react-native-vector-icons": "^8.1.0"
+    "react-native-vector-icons": "^8.1.0",
+    "rxjs": "^7.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -27,10 +25,8 @@
     "@types/react-native": "^0.64.5",
     "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^26.6.3",
-    "concurrently": "^6.2.0",
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
-    "json-server": "^0.16.3",
     "metro-react-native-babel-preset": "^0.64.0",
     "prettier": "^2.3.2",
     "react-test-renderer": "17.0.1",
