@@ -1,8 +1,7 @@
 import {AxiosRequestConfig} from 'axios';
 
 export const axiosRequestConfiguration: AxiosRequestConfig = {
-  // baseURL: 'http://localhost:5000/',
-  baseURL: 'http://10.0.2.2:5000/',
+  baseURL: 'https://jsonplaceholder.typicode.com/',
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json',
@@ -10,7 +9,10 @@ export const axiosRequestConfiguration: AxiosRequestConfig = {
 };
 
 export const EndPoints = {
-  heroes: 'heroes',
-  antiHeroes: 'anti-heroes',
-  villains: 'villains',
+  albums: 'albums',
+  comments: 'comments',
+  photos: 'photos',
+  posts: 'posts',
+  todos: 'todos',
+  users: 'users',
 };

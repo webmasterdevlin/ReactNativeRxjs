@@ -9,28 +9,20 @@
  */
 
 import React, {useEffect, useState} from 'react';
+import {Text} from 'react-native-elements';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
   useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import {catchError, map} from 'rxjs/operators';
 
 import {get} from './app/api';
-import {EndPoints} from './app/api/api-config';
-import {AntiHeroModel} from './app/models/antiHero';
 
 const Section: React.FC<{
   title: string;
@@ -62,23 +54,10 @@ const Section: React.FC<{
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-  const [antiHeroes, setAntiHeroes] = useState<AntiHeroModel[]>([]);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
-  useEffect(() => {
-    get<AntiHeroModel[]>(EndPoints.antiHeroes)
-      .pipe(
-        map(data => setAntiHeroes(data)),
-        catchError(err => {
-          console.log(err);
-          return err;
-        }),
-      )
-      .subscribe();
-  }, []);
 
   return (
     <SafeAreaView style={backgroundStyle}>
@@ -86,17 +65,11 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          {antiHeroes?.map(ah => (
-            <View key={ah.id}>
-              <Text>{ah.knownAs}</Text>
-            </View>
-          ))}
-        </View>
+            padding: 20,
+          }}></View>
       </ScrollView>
     </SafeAreaView>
   );
