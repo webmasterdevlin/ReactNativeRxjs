@@ -6,7 +6,9 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "ios": "npx pod-install && npx react-native run-ios --simulator='iPhone SE (2nd generation)'",
-    "android": "npx react-native run-android --variant=Debug"
+    "android": "npx react-native run-android --variant=Debug",
+    "backend": "json-server --watch db.json --port 5000 --delay=1000",
+    "start:fullstack": "concurrently \"npm run backend\" \"npm run ios\""
   },
   "dependencies": {
     "axios": "^0.21.1",
