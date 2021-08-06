@@ -17,7 +17,7 @@ import {EndPoints} from './app/api/api-config';
 import {User} from './app/models/user';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === 'light';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
