@@ -1,15 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Text} from 'react-native-elements';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {catchError, map, mergeMap} from 'rxjs/operators';
+import {SafeAreaView, ScrollView, StatusBar, View} from 'react-native';
 
 import {get} from './app/api';
 import {Post} from './app/models/post';
@@ -17,12 +9,6 @@ import {EndPoints} from './app/api/api-config';
 import {User} from './app/models/user';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'light';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   const [posts, setPosts] = useState<Post[]>([]);
   const [userName, setUserName] = useState('');
 
@@ -54,17 +40,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <View>
+    <SafeAreaView>
+      <StatusBar />
+      <ScrollView>
+        <View
+          style={{
+            backgroundColor: '#FFF',
+            padding: 20,
+          }}>
           <Text h2>{userName}</Text>
         </View>
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            backgroundColor: '#FFF',
             padding: 20,
           }}>
           {posts?.map(post => (
